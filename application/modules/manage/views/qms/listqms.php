@@ -76,18 +76,22 @@
                                         break;
                                     case 'L3':
                                     case 'L4':
-                                        $color = 'bg-warning'; // Yellow for medium risk
-                                        break;
-                                    case 'TB5':
+                                        $color = 'bg-success'; // Yellow for medium risk
+                                        break; 
+                                        case 'M5':                              
                                     case 'M6':
                                     case 'M8':
-                                        $color = 'bg-info'; // Light Blue for very low risk
-                                        break;
                                     case 'M9':
+                                    case 'M10':
+                                        $color = 'bg-warning'; // Light Blue for very low risk
+                                        break;
+                                    
                                     case 'H12':
                                     case 'H15':
                                         $color = 'bg-danger'; // Red for high risk
                                         break;
+                                    case 'TB5':
+                                    case 'TB10':
                                     case 'H16':
                                     case 'H20':
                                     case 'H25':

@@ -1188,3 +1188,94 @@ ERROR - 2025-01-17 16:53:30 --> 404 Page Not Found: /index
 ERROR - 2025-01-17 16:53:30 --> 404 Page Not Found: /index
 ERROR - 2025-01-17 16:53:30 --> Could not find the specified $config['composer_autoload'] path: vendor/autoload.php
 ERROR - 2025-01-17 16:53:30 --> 404 Page Not Found: /index
+ERROR - 2025-01-17 16:55:48 --> Could not find the specified $config['composer_autoload'] path: vendor/autoload.php
+ERROR - 2025-01-17 16:55:49 --> Could not find the specified $config['composer_autoload'] path: vendor/autoload.php
+ERROR - 2025-01-17 16:55:49 --> Could not find the specified $config['composer_autoload'] path: vendor/autoload.php
+ERROR - 2025-01-17 16:55:49 --> 404 Page Not Found: /index
+ERROR - 2025-01-17 16:55:49 --> 404 Page Not Found: /index
+ERROR - 2025-01-17 16:55:49 --> Could not find the specified $config['composer_autoload'] path: vendor/autoload.php
+ERROR - 2025-01-17 16:55:49 --> 404 Page Not Found: /index
+ERROR - 2025-01-17 16:56:00 --> Could not find the specified $config['composer_autoload'] path: vendor/autoload.php
+ERROR - 2025-01-17 16:56:01 --> Could not find the specified $config['composer_autoload'] path: vendor/autoload.php
+ERROR - 2025-01-17 16:56:01 --> Could not find the specified $config['composer_autoload'] path: vendor/autoload.php
+ERROR - 2025-01-17 16:56:01 --> 404 Page Not Found: /index
+ERROR - 2025-01-17 16:56:01 --> 404 Page Not Found: /index
+ERROR - 2025-01-17 16:56:01 --> Could not find the specified $config['composer_autoload'] path: vendor/autoload.php
+ERROR - 2025-01-17 16:56:01 --> 404 Page Not Found: /index
+ERROR - 2025-01-17 16:56:43 --> Could not find the specified $config['composer_autoload'] path: vendor/autoload.php
+ERROR - 2025-01-17 16:56:43 --> Could not find the specified $config['composer_autoload'] path: vendor/autoload.php
+ERROR - 2025-01-17 16:56:44 --> Could not find the specified $config['composer_autoload'] path: vendor/autoload.php
+ERROR - 2025-01-17 16:56:44 --> Could not find the specified $config['composer_autoload'] path: vendor/autoload.php
+ERROR - 2025-01-17 16:56:44 --> 404 Page Not Found: /index
+ERROR - 2025-01-17 16:56:44 --> 404 Page Not Found: /index
+ERROR - 2025-01-17 16:56:44 --> Could not find the specified $config['composer_autoload'] path: vendor/autoload.php
+ERROR - 2025-01-17 16:56:44 --> 404 Page Not Found: /index
+ERROR - 2025-01-17 17:00:14 --> Could not find the specified $config['composer_autoload'] path: vendor/autoload.php
+ERROR - 2025-01-17 17:00:15 --> Severity: error --> Exception: syntax error, unexpected single-quoted string ":                              " /var/www/html/public/application/modules/manage/views/qms/listqms.php 82
+ERROR - 2025-01-17 17:00:35 --> Could not find the specified $config['composer_autoload'] path: vendor/autoload.php
+ERROR - 2025-01-17 17:00:36 --> Could not find the language line "ccc_delete_confirm"
+ERROR - 2025-01-17 17:00:36 --> Could not find the specified $config['composer_autoload'] path: vendor/autoload.php
+ERROR - 2025-01-17 17:00:36 --> Could not find the specified $config['composer_autoload'] path: vendor/autoload.php
+ERROR - 2025-01-17 17:00:36 --> 404 Page Not Found: /index
+ERROR - 2025-01-17 17:00:36 --> 404 Page Not Found: /index
+ERROR - 2025-01-17 17:00:37 --> Could not find the specified $config['composer_autoload'] path: vendor/autoload.php
+ERROR - 2025-01-17 17:00:37 --> 404 Page Not Found: /index
+ERROR - 2025-01-17 17:00:42 --> Could not find the specified $config['composer_autoload'] path: vendor/autoload.php
+ERROR - 2025-01-17 17:00:43 --> Severity: Warning --> Undefined property: stdClass::$StrategiRawatan /var/www/html/public/application/modules/manage/views/qms/formedit.php 178
+ERROR - 2025-01-17 17:00:43 --> Could not find the specified $config['composer_autoload'] path: vendor/autoload.php
+ERROR - 2025-01-17 17:00:43 --> Could not find the specified $config['composer_autoload'] path: vendor/autoload.php
+ERROR - 2025-01-17 17:00:43 --> 404 Page Not Found: /index
+ERROR - 2025-01-17 17:00:43 --> 404 Page Not Found: /index
+ERROR - 2025-01-17 17:00:43 --> Could not find the specified $config['composer_autoload'] path: vendor/autoload.php
+ERROR - 2025-01-17 17:00:43 --> 404 Page Not Found: /index
+ERROR - 2025-01-17 17:00:46 --> Could not find the specified $config['composer_autoload'] path: vendor/autoload.php
+ERROR - 2025-01-17 17:00:47 --> Could not find the specified $config['composer_autoload'] path: vendor/autoload.php
+ERROR - 2025-01-17 17:00:47 --> Could not find the language line "ccc_delete_confirm"
+ERROR - 2025-01-17 17:00:48 --> Could not find the specified $config['composer_autoload'] path: vendor/autoload.php
+ERROR - 2025-01-17 17:00:48 --> Could not find the specified $config['composer_autoload'] path: vendor/autoload.php
+ERROR - 2025-01-17 17:00:48 --> 404 Page Not Found: /index
+ERROR - 2025-01-17 17:00:48 --> 404 Page Not Found: /index
+ERROR - 2025-01-17 17:00:48 --> Could not find the specified $config['composer_autoload'] path: vendor/autoload.php
+ERROR - 2025-01-17 17:00:49 --> 404 Page Not Found: /index
+ERROR - 2025-01-17 17:01:15 --> Could not find the specified $config['composer_autoload'] path: vendor/autoload.php
+ERROR - 2025-01-17 17:01:17 --> Could not find the language line "ccc_delete_confirm"
+ERROR - 2025-01-17 17:01:17 --> Could not find the specified $config['composer_autoload'] path: vendor/autoload.php
+ERROR - 2025-01-17 17:01:17 --> Could not find the specified $config['composer_autoload'] path: vendor/autoload.php
+ERROR - 2025-01-17 17:01:17 --> 404 Page Not Found: /index
+ERROR - 2025-01-17 17:01:17 --> 404 Page Not Found: /index
+ERROR - 2025-01-17 17:01:17 --> Could not find the specified $config['composer_autoload'] path: vendor/autoload.php
+ERROR - 2025-01-17 17:01:17 --> 404 Page Not Found: /index
+ERROR - 2025-01-17 17:01:24 --> Could not find the specified $config['composer_autoload'] path: vendor/autoload.php
+ERROR - 2025-01-17 17:01:24 --> Severity: Warning --> Undefined property: stdClass::$StrategiRawatan /var/www/html/public/application/modules/manage/views/qms/formedit.php 178
+ERROR - 2025-01-17 17:01:25 --> Could not find the specified $config['composer_autoload'] path: vendor/autoload.php
+ERROR - 2025-01-17 17:01:25 --> Could not find the specified $config['composer_autoload'] path: vendor/autoload.php
+ERROR - 2025-01-17 17:01:25 --> 404 Page Not Found: /index
+ERROR - 2025-01-17 17:01:25 --> 404 Page Not Found: /index
+ERROR - 2025-01-17 17:01:25 --> Could not find the specified $config['composer_autoload'] path: vendor/autoload.php
+ERROR - 2025-01-17 17:01:25 --> 404 Page Not Found: /index
+ERROR - 2025-01-17 17:01:37 --> Could not find the specified $config['composer_autoload'] path: vendor/autoload.php
+ERROR - 2025-01-17 17:01:37 --> Could not find the specified $config['composer_autoload'] path: vendor/autoload.php
+ERROR - 2025-01-17 17:01:38 --> Could not find the language line "ccc_delete_confirm"
+ERROR - 2025-01-17 17:01:38 --> Could not find the specified $config['composer_autoload'] path: vendor/autoload.php
+ERROR - 2025-01-17 17:01:38 --> Could not find the specified $config['composer_autoload'] path: vendor/autoload.php
+ERROR - 2025-01-17 17:01:38 --> 404 Page Not Found: /index
+ERROR - 2025-01-17 17:01:38 --> 404 Page Not Found: /index
+ERROR - 2025-01-17 17:01:38 --> Could not find the specified $config['composer_autoload'] path: vendor/autoload.php
+ERROR - 2025-01-17 17:01:38 --> 404 Page Not Found: /index
+ERROR - 2025-01-17 17:01:40 --> Could not find the specified $config['composer_autoload'] path: vendor/autoload.php
+ERROR - 2025-01-17 17:01:41 --> Severity: Warning --> Undefined property: stdClass::$StrategiRawatan /var/www/html/public/application/modules/manage/views/qms/formedit.php 178
+ERROR - 2025-01-17 17:01:41 --> Could not find the specified $config['composer_autoload'] path: vendor/autoload.php
+ERROR - 2025-01-17 17:01:41 --> Could not find the specified $config['composer_autoload'] path: vendor/autoload.php
+ERROR - 2025-01-17 17:01:41 --> 404 Page Not Found: /index
+ERROR - 2025-01-17 17:01:41 --> 404 Page Not Found: /index
+ERROR - 2025-01-17 17:01:41 --> Could not find the specified $config['composer_autoload'] path: vendor/autoload.php
+ERROR - 2025-01-17 17:01:41 --> 404 Page Not Found: /index
+ERROR - 2025-01-17 17:02:19 --> Could not find the specified $config['composer_autoload'] path: vendor/autoload.php
+ERROR - 2025-01-17 17:02:20 --> Could not find the specified $config['composer_autoload'] path: vendor/autoload.php
+ERROR - 2025-01-17 17:02:20 --> Could not find the language line "ccc_delete_confirm"
+ERROR - 2025-01-17 17:02:20 --> Could not find the specified $config['composer_autoload'] path: vendor/autoload.php
+ERROR - 2025-01-17 17:02:20 --> Could not find the specified $config['composer_autoload'] path: vendor/autoload.php
+ERROR - 2025-01-17 17:02:20 --> 404 Page Not Found: /index
+ERROR - 2025-01-17 17:02:20 --> 404 Page Not Found: /index
+ERROR - 2025-01-17 17:02:20 --> Could not find the specified $config['composer_autoload'] path: vendor/autoload.php
+ERROR - 2025-01-17 17:02:20 --> 404 Page Not Found: /index
