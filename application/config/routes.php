@@ -85,3 +85,10 @@ $route['main'] = 'reg/sys/index';
 $route['update'] = 'reg/profil/create';
 $route['pg_direct'] = 'rhm/ccc/index'; //direct
 $route['pg_return'] = 'kursusv1/bayar/view_transaction'; //indirect
+
+
+//test
+$route['qms/statusDaftarRisiko'] = 'qms/statusDaftarRisiko';
+$route['qms/filterDocuments/(:num)'] = 'qms/filterDocuments/$1';
+
+$route['qmsptj/listqmsptj'] = 'qmsptj/listqmsptj';
