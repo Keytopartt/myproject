@@ -62,7 +62,44 @@
                             <td><?php echo $row->JUSTIFIKASIKEMUNGKINAN; ?></td>
                             <td><?php echo $row->IMPAKDENGANKAWALAN; ?></td>
                             <td><?php echo $row->JUSTIFIKASIIMPAK; ?></td>
-                            <td><?php echo $row->SKORTAHAPRISIKO; ?></td>
+                            <!-- Apply color logic to the "Skor & Tahap Risiko Dengan Kawalan" column -->
+                            <td>
+                                <?php
+                                // Get the value for "Skor & Tahap Risiko Dengan Kawalan"
+                                $riskScore = $row->SKORTAHAPRISIKO;
+
+                                // Determine the color based on the score value
+                                switch ($riskScore) {
+                                    case 'L1':
+                                    case 'L2':
+                                        $color = 'bg-success'; // Green for low risk
+                                        break;
+                                    case 'L3':
+                                    case 'L4':
+                                        $color = 'bg-warning'; // Yellow for medium risk
+                                        break;
+                                    case 'TB5':
+                                    case 'M6':
+                                    case 'M8':
+                                        $color = 'bg-info'; // Light Blue for very low risk
+                                        break;
+                                    case 'M9':
+                                    case 'H12':
+                                    case 'H15':
+                                        $color = 'bg-danger'; // Red for high risk
+                                        break;
+                                    case 'H16':
+                                    case 'H20':
+                                    case 'H25':
+                                        $color = 'bg-danger'; // Red for high risk
+                                        break;
+                                    default:
+                                        $color = 'bg-secondary'; // Default gray for invalid or missing scores
+                                        break;
+                                }
+                                ?>
+                                <span class="badge <?php echo $color; ?>"><?php echo $riskScore; ?></span>
+                            </td>
                             <td><?php echo $row->KEUTAMAANPENERIMAANRISIKO; ?></td>
                             <td><?php echo $row->STRATEGIRAWATAN; ?></td>
                             <td><?php echo $row->KAWALANTAMBAHAN; ?></td>

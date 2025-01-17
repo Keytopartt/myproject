@@ -88,7 +88,7 @@ $route['pg_return'] = 'kursusv1/bayar/view_transaction'; //indirect
 
 
 //test
-$route['qms/statusDaftarRisiko'] = 'qms/statusDaftarRisiko';
-$route['qms/filterDocuments/(:num)'] = 'qms/filterDocuments/$1';
+// $route['qms/statusDaftarRisiko'] = 'qms/statusDaftarRisiko';
+// $route['qms/filterDocuments/(:num)'] = 'qms/filterDocuments/$1';
 
-$route['qmsptj/listqmsptj'] = 'qmsptj/listqmsptj';
+// $route['qmsptj/listqmsptj'] = 'qmsptj/listqmsptj';

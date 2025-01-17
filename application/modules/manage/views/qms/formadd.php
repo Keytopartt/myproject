@@ -34,25 +34,45 @@
     </div>
 
     <div class="row mb-3">
-        <div class="col-md-6">
-            <label for="kategori_risiko" class="form-label">Kategori Risiko</label>
-            <input type="text" class="form-control" id="kategori_risiko" name="kategori_risiko" placeholder="Enter Kategori Risiko" required>
-        </div>
-        <div class="col-md-6">
-            <label for="kawalan_sedia_ada" class="form-label">Kawalan Sedia Ada</label>
-            <input type="text" class="form-control" id="kawalan_sedia_ada" name="kawalan_sedia_ada" placeholder="Enter Kawalan Sedia Ada" required>
-        </div>
+    <div class="col-md-6">
+        <label for="kategori_risiko" class="form-label">Kategori Risiko</label>
+        <select class="form-control" id="kategori_risiko" name="kategori_risiko" required>
+            <option value="" disabled selected>Select Kategori Risiko</option>
+            <option value="Strategi">Strategi</option>
+            <option value="Reputasi">Reputasi</option>
+            <option value="Manusia">Manusia</option>
+            <option value="Pematuhan">Pematuhan</option>
+            <option value="Kewangan">Kewangan</option>
+        </select>
     </div>
+    <div class="col-md-6">
+        <label for="kawalan_sedia_ada" class="form-label">Kawalan Sedia Ada</label>
+        <input type="text" class="form-control" id="kawalan_sedia_ada" name="kawalan_sedia_ada" placeholder="Enter Kawalan Sedia Ada" required>
+    </div>
+</div>
 
     <div class="row mb-3">
-        <div class="col-md-6">
-            <label for="keberkesanan_kawalan" class="form-label">Keberkesanan Kawalan</label>
-            <input type="text" class="form-control" id="keberkesanan_kawalan" name="keberkesanan_kawalan" placeholder="Enter Keberkesanan Kawalan">
-        </div>
-        <div class="col-md-6">
+    <div class="col-md-6">
+        <label for="keberkesanan_kawalan" class="form-label">Tahap Keberkesanan Kawalan</label>
+        <select class="form-control" id="keberkesanan_kawalan" name="keberkesanan_kawalan" required>
+            <option value="" disabled selected>Select Tahap Keberkesanan</option>
+            <option value="HE">HE (High Effectiveness)</option>
+            <option value="ME">ME (Medium Effectiveness)</option>
+            <option value="IE">IE (Insufficient Effectiveness)</option>
+        </select>
+    </div>
+    <div class="col-md-6">
             <label for="kemungkinan_dengan_kawalan" class="form-label">Kemungkinan dengan Kawalan</label>
-            <input type="text" class="form-control" id="kemungkinan_dengan_kawalan" name="kemungkinan_dengan_kawalan" placeholder="Enter Kemungkinan dengan Kawalan">
+            <select class="form-control" id="kemungkinan_dengan_kawalan" name="kemungkinan_dengan_kawalan" required>
+                <option value="" disabled selected>Pilih Kemungkinan</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
         </div>
+
     </div>
 
     <div class="row mb-3">
@@ -62,7 +82,14 @@
         </div>
         <div class="col-md-6">
             <label for="impak_dengan_kawalan" class="form-label">Impak dengan Kawalan</label>
-            <input type="text" class="form-control" id="impak_dengan_kawalan" name="impak_dengan_kawalan" placeholder="Enter Impak dengan Kawalan">
+            <select class="form-control" id="impak_dengan_kawalan" name="impak_dengan_kawalan" required>
+                <option value="" disabled selected>Pilih Impak</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
         </div>
     </div>
 
@@ -73,19 +100,101 @@
         </div>
         <div class="col-md-6">
             <label for="skor_tahap_risiko" class="form-label">Skor Tahap Risiko</label>
-            <input type="text" class="form-control" id="skor_tahap_risiko" name="skor_tahap_risiko" placeholder="Enter Skor Tahap Risiko">
+            <input type="text" class="form-control" id="skor_tahap_risiko" name="skor_tahap_risiko" placeholder="Skor Tahap Risiko" readonly>
         </div>
     </div>
 
+    <script>
+    // JavaScript to auto-generate Skor Tahap Risiko with color coding
+    document.addEventListener('DOMContentLoaded', function () {
+        const kemungkinanSelect = document.getElementById('kemungkinan_dengan_kawalan');
+        const impakSelect = document.getElementById('impak_dengan_kawalan');
+        const skorInput = document.getElementById('skor_tahap_risiko');
+
+        function calculateRiskScore(row, column) {
+            if (row == 1 && column == 1) return "L1";
+            if (row == 1 && column == 2) return "L2";
+            if (row == 1 && column == 3) return "L3";
+            if (row == 1 && column == 4) return "L4";
+            if (row == 1 && column == 5) return "TB5";
+            if (row == 2 && column == 1) return "L2";
+            if (row == 2 && column == 2) return "L4";
+            if (row == 2 && column == 3) return "M6";
+            if (row == 2 && column == 4) return "M8";
+            if (row == 2 && column == 5) return "TB10";
+            if (row == 3 && column == 1) return "L3";
+            if (row == 3 && column == 2) return "M6";
+            if (row == 3 && column == 3) return "M9";
+            if (row == 3 && column == 4) return "H12";
+            if (row == 3 && column == 5) return "H15";
+            if (row == 4 && column == 1) return "L4";
+            if (row == 4 && column == 2) return "M8";
+            if (row == 4 && column == 3) return "H12";
+            if (row == 4 && column == 4) return "H16";
+            if (row == 4 && column == 5) return "H20";
+            if (row == 5 && column == 1) return "M5";
+            if (row == 5 && column == 2) return "M10";
+            if (row == 5 && column == 3) return "H15";
+            if (row == 5 && column == 4) return "H20";
+            if (row == 5 && column == 5) return "H25";
+            return "Invalid input";
+        }
+
+        function setRiskColor(score) {
+            skorInput.style.backgroundColor = "";
+            if (score.startsWith("L")) {
+                skorInput.style.backgroundColor = "green";
+                skorInput.style.color = "white";
+            } else if (score.startsWith("M")) {
+                skorInput.style.backgroundColor = "yellow";
+                skorInput.style.color = "black";
+            } else if (score.startsWith("H")) {
+                skorInput.style.backgroundColor = "red";
+                skorInput.style.color = "white";
+            } else {
+                skorInput.style.backgroundColor = "";
+                skorInput.style.color = "black";
+            }
+        }
+
+        function updateRiskScore() {
+            const row = parseInt(kemungkinanSelect.value);
+            const column = parseInt(impakSelect.value);
+            if (!isNaN(row) && !isNaN(column)) {
+                const score = calculateRiskScore(row, column);
+                skorInput.value = score;
+                setRiskColor(score);
+            } else {
+                skorInput.value = "";
+                skorInput.style.backgroundColor = "";
+            }
+        }
+
+        kemungkinanSelect.addEventListener('change', updateRiskScore);
+        impakSelect.addEventListener('change', updateRiskScore);
+    });
+</script>
+
     <div class="row mb-3">
-        <div class="col-md-6">
-            <label for="keutamaan_penerimaan_risiko" class="form-label">Keutamaan Penerimaan Risiko</label>
-            <input type="text" class="form-control" id="keutamaan_penerimaan_risiko" name="keutamaan_penerimaan_risiko" placeholder="Enter Keutamaan Penerimaan Risiko">
-        </div>
-        <div class="col-md-6">
-            <label for="strategi_rawatan" class="form-label">Strategi Rawatan</label>
-            <input type="text" class="form-control" id="strategi_rawatan" name="strategi_rawatan" placeholder="Enter Strategi Rawatan">
-        </div>
+    <div class="col-md-6">
+        <label for="keutamaan_penerimaan_risiko" class="form-label">Keutamaan Penerimaan Risiko</label>
+        <select class="form-control" id="keutamaan_penerimaan_risiko" name="keutamaan_penerimaan_risiko" required>
+            <option value="" disabled selected>Select Keutamaan Penerimaan Risiko</option>
+            <option value="Risiko Diterima">Risiko Diterima</option>
+            <option value="Risiko Tidak Diterima">Risiko Tidak Diterima</option>
+        </select>
+    </div>
+    <div class="col-md-6">
+        <label for="strategi_rawatan" class="form-label">Strategi Rawatan</label>
+        <select class="form-control" id="strategi_rawatan" name="strategi_rawatan" required>
+            <option value="" disabled selected>Select Strategi Rawatan</option>
+            <option value="Ambil Peluang">Ambil Peluang</option>
+            <option value="Hapus">Hapus</option>
+            <option value="Kurang">Kurang</option>
+            <option value="Pindah">Pindah</option>
+            <option value="Terima">Terima</option>
+        </select>
+    </div>
     </div>
 
     <div class="row mb-3">
