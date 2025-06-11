@@ -514,3 +514,10 @@ $config['rewrite_short_tags'] = FALSE;
 | Array:		array('10.0.1.200', '192.168.5.0/24')
 */
 $config['proxy_ips'] = '';
+
+
+
+// application/config/routes.php
+$route['manage/qms/not-approved'] = 'manage/qms/list_not_approved';
+
+$route['rejected-documents'] = 'qms/rejected';

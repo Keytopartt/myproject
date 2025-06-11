@@ -161,6 +161,22 @@
         impakSelect.addEventListener('change', updateRiskScore);
     });
 </script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const tarikhMulaInput = document.getElementById('tarikh_mula');
+        const tahunInput = document.getElementById('tahun');
+
+        tarikhMulaInput.addEventListener('change', function () {
+            const date = new Date(tarikhMulaInput.value);
+            if (!isNaN(date.getTime())) {
+                tahunInput.value = date.getFullYear(); // Extract and set the year
+            } else {
+                tahunInput.value = ""; // Clear if the date is invalid
+            }
+        });
+    });
+</script>
+
 
     <div class="row mb-3">
     <div class="col-md-6">
@@ -204,6 +220,13 @@
             <label for="tarikh_akhir" class="form-label">Tarikh Akhir</label>
             <input type="date" class="form-control" id="tarikh_akhir" name="tarikh_akhir" value="<?php echo $qms->TARIKHAKHIR ?>">
         </div>
+    </div>
+
+    <div class="row mb-3">
+    <div class="col-md-6">
+        <label for="tahun" class="form-label">Tahun</label>
+        <input type="text" class="form-control" id="tahun" name="tahun" placeholder="Tahun" readonly value="<?php echo $qms->TAHUN ?>">
+    </div>
     </div>
 
 

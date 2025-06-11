@@ -11,9 +11,21 @@
 <!-- Form for actions on the page -->
 <?= form_open($this->uri->uri_string(), array('id' => 'frm_menu', 'name' => 'frm_menu')) ?>    
 
+<div class="filter-container mb-3">
+    <label for="tahunFilter">Filter by Year:</label>
+    <select id="tahunFilter" class="form-control" style="width: 200px; display: inline-block;">
+        <option value="">All</option>
+        <?php foreach (array_unique(array_column($data->result_array(), 'TAHUN')) as $year) { ?>
+            <option value="<?php echo $year; ?>"><?php echo $year; ?></option>
+        <?php } ?>
+    </select>
+</div>
+
+
 <!-- Button for adding a new QMS document -->
 <?php if ($ENABLE_ADD) { ?>
     <a class="btn btn-primary" href="<?php echo module_url("qms/formadd") ?>">Add Form</a>
+    <a class="btn btn-primary" href="<?php echo module_url("qms/rejected_view") ?>">Rejected List</a>
 <?php } ?>
     
 <div class="card">
@@ -42,7 +54,11 @@
                         <th>Tanggungjawab</th>
                         <th>Tarikh Mula</th>
                         <th>Tarikh Akhir</th>
+                        <th>Tahun</th>
+
                         <th>Comment</th>
+                        <th>Status Kelulusan</th>
+
                         <th>Delete</th>
                         <th>Edit</th>
                     </tr>
@@ -110,7 +126,23 @@
                             <td><?php echo $row->TANGGUNGJAWAB; ?></td>
                             <td><?php echo $row->TARIKHMULA; ?></td>
                             <td><?php echo $row->TARIKHAKHIR; ?></td>
+                            <td><?php echo $row->TAHUN; ?></td>
+
                             <td><?php echo $row->COMMENTPTJ; ?></td>
+                            <td>
+    <?php 
+$status = strtolower(trim((string) $row->APPROVESTATUS));
+
+        if ($status == 'approved') {
+            echo '<span class="badge bg-success">Approved</span>';
+        } elseif ($status == 'not_approved') {
+            echo '<span class="badge bg-danger">Not Approved</span>';
+        } else {
+            echo '<span class="badge bg-secondary">Pending</span>';
+        }
+    ?>
+</td>
+                            
 
                             <td>
                                 <?php if ($ENABLE_DELETE) { ?>
@@ -123,6 +155,10 @@
                         </tr>
                     <?php } ?>
                 </tbody>
+                <!-- Button to generate PDF -->
+    <div class="mt-3">
+        <a href="<?php echo module_url("qms/generatepdf"); ?>" class="btn btn-success">Generate PDF</a>
+    </div>
             </table>
         </div>
         
@@ -143,6 +179,8 @@
     </div>
 </div><!-- /.card --> 
 
+
+
 <?php form_close(); ?>
 
 <!-- Include necessary jQuery -->
@@ -152,14 +190,14 @@
 
 <script>
 // Initialize DataTable for sorting functionality
-$(document).ready(function() {
-    $('#qmsTable').DataTable({
-        "order": [[0, 'asc']], // Initial sorting by the first column (No.),
-        "paging": true, // Enable pagination
-        "scrollX": true, // Allow horizontal scrolling for wide tables
-        "lengthMenu": [5, 10, 15, 20], // Show a smaller number of records per page
-    });
-});
+// $(document).ready(function() {
+//     $('#qmsTable').DataTable({
+//         "order": [[0, 'asc']], // Initial sorting by the first column (No.),
+//         "paging": true, // Enable pagination
+//         "scrollX": true, // Allow horizontal scrolling for wide tables
+//         "lengthMenu": [5, 10, 15, 20], // Show a smaller number of records per page
+//     });
+// });
 
 function confirm_delete(myform)
 {
@@ -185,4 +223,23 @@ function confirmDelete(url) {
         }
     }
 }
+
+
+$(document).ready(function() {
+    var table = $('#qmsTable').DataTable({
+        "order": [[0, 'asc']], // Initial sorting by the first column (No.),
+        "paging": true, // Enable pagination
+        "scrollX": true, // Allow horizontal scrolling for wide tables
+        "lengthMenu": [5, 10, 15, 20] // Show a smaller number of records per page
+    });
+
+    // Filter table by "Tahun"
+    $('#tahunFilter').on('change', function() {
+        var selectedYear = $(this).val();
+        table.columns(19).search(selectedYear).draw(); // Column index for "Tahun"
+    });
+});
+
+
+
 </script>

@@ -217,5 +217,14 @@
 			
 		  </ul>
 		</li>
+
+		<li class="sidebar-item">
+			  <a href="<?= base_url()?>manage/qms/formadd" class="sidebar-link">
+				<iconify-icon icon="solar:stop-circle-line-duotone" class="sidebar-icon"></iconify-icon>
+				<span class="hide-menu">Add Document</span>
+			  </a>
+			</li>
+		</li>
+		
     </li>
 </ul>

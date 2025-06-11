@@ -128,6 +128,24 @@ class Qms extends Admin_Controller
         redirect(module_url("qms/listqms"));
     }
 
+    public function saveptj($risk_id)
+{
+    $approve_status = $this->input->post("approve_status");
+    $comment_ptj = $this->input->post("comment_ptj");
+
+    $data_to_update = [
+        "APPROVESTATUS" => $approve_status,
+        "COMMENTPTJ"    => $comment_ptj,
+    ];
+
+    $this->db->where("RISKID", $risk_id);
+    $this->db->update("QMS_DOCUMENT", $data_to_update);
+
+    $this->session->set_flashdata("message", "Status kelulusan PTJ berjaya dikemaskini."); // Optional: Flash message
+    redirect(module_url("qms/listqmsptjs")); // Redirect back to PTJ list page
+}
+
+
     public function comment($risk_id)
     {
         $data_to_update = [

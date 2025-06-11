@@ -172,6 +172,24 @@
 
         kemungkinanSelect.addEventListener('change', updateRiskScore);
         impakSelect.addEventListener('change', updateRiskScore);
+
+       
+    });
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const tarikhMulaInput = document.getElementById('tarikh_mula');
+        const tahunInput = document.getElementById('tahun');
+
+        tarikhMulaInput.addEventListener('change', function () {
+            const date = new Date(tarikhMulaInput.value);
+            if (!isNaN(date.getTime())) {
+                tahunInput.value = date.getFullYear(); // Extract and set the year
+            } else {
+                tahunInput.value = ""; // Clear if the date is invalid
+            }
+        });
     });
 </script>
 
@@ -219,8 +237,21 @@
         </div>
     </div>
 
+    <div class="row mb-3">
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <label for="tahun" class="form-label">Tahun</label>
+            <input type="text" class="form-control" id="tahun" name="tahun" placeholder="Tahun" readonly>
+        </div>
+        <div class="col-md-6">
+            <label for="editor_id" class="form-label">Editor ID</label>
+            <input type="text" class="form-control" id="editor_id" name="editor_id" value="<?php echo $this->session->userdata('user_id'); ?>" readonly>
+        </div>
+    </div>
+    
     <!-- Submit Button -->
     <div class="text-end">
         <button type="submit" class="btn btn-primary">Add</button>
     </div>
+    
 </form>

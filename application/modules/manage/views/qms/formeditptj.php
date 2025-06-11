@@ -103,6 +103,15 @@
             <label for="comment_ptj" class="form-label">Comment</label>
             <textarea class="form-control" id="comment_ptj" name="comment_ptj" rows="4"><?php echo $qms->COMMENTPTJ ?></textarea>
         </div>
+        <div class="col-md-6">
+        <label for="approvestatus" class="form-label">Approval</label>
+        <select class="form-control" id="approvestatus" name="approvestatus" required>
+            <option value="" disabled selected>Approval</option>
+            <option value="Approved"<?php echo $qms->APPROVESTATUS == 'Approved' ? 'selected' : ''; ?>>Approved</option>
+            <option value="Not_approved"<?php echo $qms->APPROVESTATUS == 'Not Approved' ? 'selected' : ''; ?>>Not Approved</option>
+
+        </select>
+    </div>
     </div>
 
     <div class="text-end">

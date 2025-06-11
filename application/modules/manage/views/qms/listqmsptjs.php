@@ -41,6 +41,7 @@
                         <th>Tarikh Mula</th>
                         <th>Tarikh Akhir</th>
                         <th>Comment</th>
+                        <th>Status Kelulusan</th>
                         <th>Delete</th>
                         <th>Edit</th>
                     </tr>
@@ -105,6 +106,21 @@
                             <td><?php echo $row->TARIKHMULA; ?></td>
                             <td><?php echo $row->TARIKHAKHIR; ?></td>
                             <td><?php echo $row->COMMENTPTJ; ?></td>
+                            
+                            <td>
+    <?php 
+$status = strtolower(trim((string) $row->APPROVESTATUS));
+
+        if ($status == 'approved') {
+            echo '<span class="badge bg-success">Approved</span>';
+        } elseif ($status == 'not_approved') {
+            echo '<span class="badge bg-danger">Not Approved</span>';
+        } else {
+            echo '<span class="badge bg-secondary">Pending</span>';
+        }
+    ?>
+</td>
+                            
 
                             <td>
                                 <?php if ($ENABLE_DELETE) { ?>

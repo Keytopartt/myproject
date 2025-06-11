@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>QMS Report</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 10px;
+            margin: 0;
+            padding: 0;
+            background-color: #A0A0A0;
+        }
+        .container {
+            position: relative;
+            width: 892px;
+            height: 1262px;
+        }
+        .background {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        table {
+            width: 90%;
+            border-collapse: collapse;
+            margin: 20px auto;
+            background: white;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img class="background" src="src/target001.png" alt="Background Image"/>
+
+        <h2 style="text-align: center;">QMS Report</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>ID Risiko</th>
+                    <th>Risiko</th>
+                    <th>Punca</th>
+                    <th>Kesan</th>
+                    <th>Kategori Risiko</th>
+                    <th>Tahun</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php $i = 0; foreach ($data->result() as $row) { ?>
+                    <tr>
+                        <td><?php echo ++$i; ?></td>
+                        <td><?php echo $row->RISKID; ?></td>
+                        <td><?php echo $row->RISIKO; ?></td>
+                        <td><?php echo $row->PUNCA; ?></td>
+                        <td><?php echo $row->KESAN; ?></td>
+                        <td><?php echo $row->KATEGORIRISIKO; ?></td>
+                        <td><?php echo $row->TAHUN; ?></td>
+                    </tr>
+                <?php } ?>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

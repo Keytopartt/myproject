@@ -143,6 +143,8 @@ $autoload['language'] = array();
 $autoload['model'] = array("users/lookup_model" => "lm");
 
 
+//test
+$this->load->library('session');
 
 
 
