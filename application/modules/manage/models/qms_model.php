@@ -96,5 +96,36 @@ public function get_not_approved()
                        ->from('QMS_DOCUMENT')
                        ->count_all_results();
     }
+
+
+    public function validate_user($iduser, $password) {
+    $sql = "SELECT IDUSER, PASSWORD, ROLE FROM PAGEUSER WHERE IDUSER = ? AND PASSWORD = ?";
+    $query = $this->db->query($sql, array($iduser, $password));
+
+    if ($query->num_rows() == 1) {
+        return $query->row();
+    } else {
+        return false;
+    }
+}
+
+
+public function get_all_userQMS() {
+    $sql = "SELECT IDUSER, PASSWORD, ROLE FROM PAGEUSER ORDER BY IDUSER";
+    $query = $this->db->query($sql);
+    return $query->result();
+}
+
+public function insert_user($iduser, $password, $role) {
+    $sql = "INSERT INTO PAGEUSER (IDUSER, PASSWORD, ROLE) VALUES (?, ?, ?)";
+    $this->db->query($sql, array($iduser, $password, $role));
+}
+
+public function delete_user($iduser) {
+    $sql = "DELETE FROM PAGEUSER WHERE IDUSER = ?";
+    $this->db->query($sql, array($iduser));
+}
+
+
 }
 

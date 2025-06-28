@@ -494,6 +494,95 @@ public function rejected()
     
     $this->load->view('rejected_view', $data);
 }
+
+public function rejected_listqms() {
+    $data = $this->qms_model->get_all_qms();
+    $this->template->title("Rejected QMS List");
+    $this->template->set("data", $data);
+    $this->template->render("manage/qms/rejected_listqms");
+}
+
+
+
+//login
+public function login() {
+    $this->template->render("manage/qms/login_form");
+}
+
+public function auth() {
+    $iduser = $this->input->post('iduser', true);
+    $password = $this->input->post('password', true);
+
+    $this->load->model('manage/qms_model');
+    $user = $this->qms_model->validate_user($iduser, $password);
+
+    if ($user) {
+        $this->session->set_userdata('iduser', $user->IDUSER);
+        $this->session->set_userdata('role', $user->ROLE);
+
+        if (strtoupper($user->ROLE) == 'PENYELARAS') {
+            redirect(module_url('qms/listqms'));
+        } elseif (strtoupper($user->ROLE) == 'PEGAWAITSR') {
+            redirect(module_url('qms/listqmsptjs'));
+            } elseif (strtoupper($user->ROLE) == 'ADMIN') {
+            redirect(module_url('qms/manageuser'));
+        } else {
+            $this->session->set_flashdata('error', 'Invalid role access.');
+            redirect(module_url('qms/login'));
+        }
+    } else {
+        $this->session->set_flashdata('error', 'Invalid Username or Password');
+        redirect(module_url('qms/login'));
+    }
+}
+
+public function logout() {
+    $this->session->sess_destroy();
+    redirect(module_url('qms/login'));
+}
+
+
+
+// ========== ADMIN USER MANAGEMENT ==========
+public function manageuser() {
+    if (!$this->session->userdata('iduser')) {
+        redirect(module_url('qms/login'));
+    }
+    if ($this->session->userdata('role') != 'ADMIN') {
+        show_error("Access Denied. ADMIN only.");
+    }
+
+    $this->load->model('manage/qms_model');
+    $data['users'] = $this->qms_model->get_all_userQMS();
+    $this->template->title("Manage Users");
+    $this->template->set("data", $data);
+    $this->template->render("manage/qms/manageuser");
+}
+
+public function adduser() {
+    if ($this->session->userdata('role') != 'ADMIN') {
+        show_error("Access Denied.");
+    }
+
+    $this->load->model('manage/qms_model');
+    $iduser = $this->input->post('iduser', true);
+    $password = $this->input->post('password', true);
+    $role = $this->input->post('role', true);
+    $this->qms_model->insert_user($iduser, $password, $role);
+    redirect(module_url('qms/manageuser'));
+}
+
+public function deleteuser($iduser) {
+    if ($this->session->userdata('role') != 'ADMIN') {
+        show_error("Access Denied.");
+    }
+
+    $this->load->model('manage/qms_model');
+    $this->qms_model->delete_user($iduser);
+    redirect(module_url('qms/manageuser'));
+}
+
+
 }
 
 

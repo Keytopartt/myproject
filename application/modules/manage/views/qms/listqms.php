@@ -25,9 +25,12 @@
 <!-- Button for adding a new QMS document -->
 <?php if ($ENABLE_ADD) { ?>
     <a class="btn btn-primary" href="<?php echo module_url("qms/formadd") ?>">Add Form</a>
-    <a class="btn btn-primary" href="<?php echo module_url("qms/rejected_view") ?>">Rejected List</a>
+
 <?php } ?>
-    
+
+
+        <a class="btn btn-secondary" href="<?php echo module_url("qms/rejected_listqms") ?>">Rejected List</a>
+
 <div class="card">
     <div class="card-header">Senarai QMS</div> <!-- "Senarai QMS" means "List of QMS" -->
     <div class="card-body">
